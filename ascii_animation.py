@@ -912,13 +912,17 @@ class Animation:
 
 
 def main(screen, frames):
-    # boilerplate code to initialize our colors
+    # Boilerplate code to initialize our colors.
+    # To use them later, just do:
+    #
+    #   self.screen.addstr(' - ', curses.color_pair(0))   # or pair #1, 2, 3, whichever you prefer
+    #
     curses.start_color()
     curses.use_default_colors()
     for i in range(0, curses.COLORS):
         curses.init_pair(i + 1, i, -1)
 
-    # now we create and begin our game!
+    # now we create and begin our animation!
     animation = Animation(screen, frames)
     animation.play()
 
